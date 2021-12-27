@@ -33,9 +33,24 @@ body {
 .letras a:hover {
   text-decoration: none;
 }
+@keyframes efeito_caindo {
+  from {
+    width: 500px;
+  }
+  to {
+    width: 800px;
+  }
+}
+
 .img_detetive {
   width: 500px;
 }
+
+.img_detetive:hover {
+  animation-name: efeito_caindo;
+  animation-duration: 15s;
+}
+
 .popover_resposta {
   display: contents !important;
 }
