@@ -109,7 +109,8 @@
           <h2 style="color: #000">Fale uma fruta que seja amarela</h2>
         </div>
         <div class="modal-footer">
-          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover" data-placement="left"
+          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover_banana" data-placement="left"
+          data-html="true" data-img="img/banana.png"
             title="Resposta 2" data-content="BANANA">
             Resposta</a>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -177,7 +178,8 @@
           <h2 style="color: #000">Qual o inseto que você conhece que começa com a letra <b><i>A</i></b></h2>
         </div>
         <div class="modal-footer">
-          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover" data-placement="left"
+          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover_abelha" data-placement="left"
+          data-html="true" data-img="img/abelha.png"
             title="Resposta 5" data-content="ABELHA">
             Resposta</a>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -221,7 +223,8 @@
           <h2 style="color: #000">Qual o numero de letras na palavra <b><i>UVA</i></b>?</h2>
         </div>
         <div class="modal-footer">
-          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover" data-placement="left"
+          <a href="#" role="button" class="btn btn-success popover_resposta" data-toggle="popover_uva" data-placement="left"
+          data-html="true" data-img="img/uva.png"
             title="Resposta 7" data-content="3">
             Resposta</a>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -270,6 +273,38 @@
         container: 'body'
       })
     })
+
+    $(document).ready(function(){
+      $('[data-toggle="popover_banana"]').popover();  
+    });
+
+    $('[data-toggle="popover_banana"]').on('show.bs.popover', function(){
+      // conteúdo original do popover
+      var conteudo = $(this).data("content");
+      // imagem a ser inserida
+      var imagem = '<div><img width="350" src="'+ $(this).data('img') +'"><div>';
+      // adiciona uma imagem concatenando com o que já tinha
+      $(this).attr("data-content", conteudo+imagem);
+    });
+
+    $('[data-toggle="popover_uva"]').on('show.bs.popover', function(){
+      // conteúdo original do popover
+      var conteudo = $(this).data("content");
+      // imagem a ser inserida
+      var imagem = '<div><img width="350" src="'+ $(this).data('img') +'"><div>';
+      // adiciona uma imagem concatenando com o que já tinha
+      $(this).attr("data-content", conteudo+imagem);
+    });
+
+    $('[data-toggle="popover_abelha"]').on('show.bs.popover', function(){
+      // conteúdo original do popover
+      var conteudo = $(this).data("content");
+      // imagem a ser inserida
+      var imagem = '<div><img width="350" src="'+ $(this).data('img') +'"><div>';
+      // adiciona uma imagem concatenando com o que já tinha
+      $(this).attr("data-content", conteudo+imagem);
+    });
+
   </script>
 </body>
 
